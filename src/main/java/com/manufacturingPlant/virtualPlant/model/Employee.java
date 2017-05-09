@@ -15,7 +15,10 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "position_")
+    private String position;
+
+    @Column(name = "name_")
     private String name;
 
     @Column(name = "last_name")
@@ -149,6 +152,14 @@ public class Employee {
 
     public void setFlatNum(String flatNum) {
         this.flatNum = flatNum;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
 
