@@ -3,9 +3,6 @@ package com.manufacturingPlant.virtualPlant.model;
 import javax.persistence.*;
 import java.time.*;
 
-/**
- * Created by VYA on 08.05.2017.
- */
 @Entity
 @Table(name = "employees")
 public class Employee {
@@ -53,6 +50,27 @@ public class Employee {
 
     @Column(name = "flat_num")
     private String flatNum;
+
+    public Employee(String position, String name, String lastName, String middleName, String passSeriesAndNum,
+                    String identificationNum, LocalDate birthDate, String phoneNum, LocalDate joinDate,
+                    String residencePlace, String street, String buildingNum, String flatNum) {
+        this.position = position;
+        this.name = name;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.passSeriesAndNum = passSeriesAndNum;
+        this.identificationNum = identificationNum;
+        this.birthDate = birthDate;
+        this.phoneNum = phoneNum;
+        this.joinDate = joinDate;
+        this.residencePlace = residencePlace;
+        this.street = street;
+        this.buildingNum = buildingNum;
+        this.flatNum = flatNum;
+    }
+
+    public Employee() {
+    }
 
     public int getId() {
         return id;
@@ -162,5 +180,41 @@ public class Employee {
         this.position = position;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
 
+        Employee employee = (Employee) o;
+
+        if (id != employee.id) return false;
+        if (!position.equals(employee.position)) return false;
+        if (!name.equals(employee.name)) return false;
+        if (!lastName.equals(employee.lastName)) return false;
+        if (!middleName.equals(employee.middleName)) return false;
+        if (!passSeriesAndNum.equals(employee.passSeriesAndNum)) return false;
+        if (!identificationNum.equals(employee.identificationNum)) return false;
+        if (!birthDate.equals(employee.birthDate)) return false;
+        if (!phoneNum.equals(employee.phoneNum)) return false;
+        if (!joinDate.equals(employee.joinDate)) return false;
+        if (!residencePlace.equals(employee.residencePlace)) return false;
+        if (!street.equals(employee.street)) return false;
+        if (!buildingNum.equals(employee.buildingNum)) return false;
+        return flatNum.equals(employee.flatNum);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = id;
+        result = 31 * result + position.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + middleName.hashCode();
+        result = 31 * result + passSeriesAndNum.hashCode();
+        result = 31 * result + identificationNum.hashCode();
+        result = 31 * result + birthDate.hashCode();
+        result = 31 * result + joinDate.hashCode();
+        result = 31 * result + residencePlace.hashCode();
+        return result;
+    }
 }
