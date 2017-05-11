@@ -12,10 +12,7 @@ public class DepartmentEmployee {
     private int id;
 
     @Column(name = "employee_id")//FK TO employees
-    private int employeeId;
-
-    @Column(name = "department_employee_id")
-    private String departmentEmployeeId;
+    private String employeeId;
 
     @Column(name = "salary")
     private int salary;
@@ -26,9 +23,8 @@ public class DepartmentEmployee {
     public DepartmentEmployee() {
     }
 
-    public DepartmentEmployee(int employeeId, String departmentEmployeeId, int salary, String departmentName) {
+    public DepartmentEmployee(String employeeId, int salary, String departmentName) {
         this.employeeId = employeeId;
-        this.departmentEmployeeId = departmentEmployeeId;
         this.salary = salary;
         this.departmentName = departmentName;
     }
@@ -37,16 +33,12 @@ public class DepartmentEmployee {
         return id;
     }
 
-    public int getEmployeeId() {
+    public String getEmployeeId() {
         return employeeId;
     }
 
-    public String getDepartmentEmployeeId() {
-        return departmentEmployeeId;
-    }
-
-    public void setDepartmentEmployeeId(String departmentEmployeeId) {
-        this.departmentEmployeeId = departmentEmployeeId;
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
     }
 
     public int getSalary() {
@@ -73,17 +65,15 @@ public class DepartmentEmployee {
         DepartmentEmployee that = (DepartmentEmployee) o;
 
         if (id != that.id) return false;
-        if (employeeId != that.employeeId) return false;
         if (salary != that.salary) return false;
-        if (!departmentEmployeeId.equals(that.departmentEmployeeId)) return false;
+        if (!employeeId.equals(that.employeeId)) return false;
         return departmentName.equals(that.departmentName);
     }
 
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + employeeId;
-        result = 31 * result + departmentEmployeeId.hashCode();
+        result = 31 * result + employeeId.hashCode();
         result = 31 * result + salary;
         result = 31 * result + departmentName.hashCode();
         return result;

@@ -12,6 +12,9 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "employee_id")//FK TO department_employees and workshop_employees
+    private String employeeId;
+
     @Column(name = "position_")
     private String position;
 
@@ -51,9 +54,13 @@ public class Employee {
     @Column(name = "flat_num")
     private String flatNum;
 
-    public Employee(String position, String name, String lastName, String middleName, String passSeriesAndNum,
-                    String identificationNum, LocalDate birthDate, String phoneNum, LocalDate joinDate,
-                    String residencePlace, String street, String buildingNum, String flatNum) {
+    public Employee() {
+    }
+
+    public Employee(String employeeId, String position, String name, String lastName, String middleName,
+                    String passSeriesAndNum, String identificationNum, LocalDate birthDate, String phoneNum,
+                    LocalDate joinDate, String residencePlace, String street, String buildingNum, String flatNum) {
+        this.employeeId = employeeId;
         this.position = position;
         this.name = name;
         this.lastName = lastName;
@@ -69,11 +76,24 @@ public class Employee {
         this.flatNum = flatNum;
     }
 
-    public Employee() {
-    }
-
     public int getId() {
         return id;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public void setEmployeeId(String employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 
     public String getName() {
@@ -172,14 +192,6 @@ public class Employee {
         this.flatNum = flatNum;
     }
 
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -187,7 +199,7 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-        if (id != employee.id) return false;
+        if (employeeId != employee.employeeId) return false;
         if (!position.equals(employee.position)) return false;
         if (!name.equals(employee.name)) return false;
         if (!lastName.equals(employee.lastName)) return false;
@@ -200,12 +212,13 @@ public class Employee {
         if (!residencePlace.equals(employee.residencePlace)) return false;
         if (!street.equals(employee.street)) return false;
         if (!buildingNum.equals(employee.buildingNum)) return false;
-        return flatNum.equals(employee.flatNum);
+        return flatNum != null ? flatNum.equals(employee.flatNum) : employee.flatNum == null;
     }
 
     @Override
     public int hashCode() {
         int result = id;
+        result = 31 * result + employeeId.hashCode();
         result = 31 * result + position.hashCode();
         result = 31 * result + name.hashCode();
         result = 31 * result + lastName.hashCode();
@@ -213,8 +226,12 @@ public class Employee {
         result = 31 * result + passSeriesAndNum.hashCode();
         result = 31 * result + identificationNum.hashCode();
         result = 31 * result + birthDate.hashCode();
+        result = 31 * result + phoneNum.hashCode();
         result = 31 * result + joinDate.hashCode();
         result = 31 * result + residencePlace.hashCode();
+        result = 31 * result + street.hashCode();
+        result = 31 * result + (buildingNum != null ? buildingNum.hashCode() : 0);
+        result = 31 * result + (flatNum != null ? flatNum.hashCode() : 0);
         return result;
     }
 }
