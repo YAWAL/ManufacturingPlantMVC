@@ -1,14 +1,15 @@
-package com.manufacturingPlant.virtualPlant.dao.impl;
+package com.manufacturingPlant.virtualPlant.service.impl;
 
-import com.manufacturingPlant.virtualPlant.dao.api.EmployeeDAO;
 import com.manufacturingPlant.virtualPlant.model.Employee;
+import com.manufacturingPlant.virtualPlant.service.api.EmployeeService;
 
 import java.util.List;
 
 /**
- * Created by VYA on 11.05.2017.
+ * Created by VYA on 13.05.2017.
  */
-public class EmployeeDAOImpl implements EmployeeDAO {
+public class EmployeeServiceImpl implements EmployeeService {
+
     public void addEmployee(Employee employee) {
 
     }

@@ -1,14 +1,15 @@
-package com.manufacturingPlant.virtualPlant.dao.impl;
+package com.manufacturingPlant.virtualPlant.service.impl;
 
-import com.manufacturingPlant.virtualPlant.dao.api.WorkshopEmployeeDAO;
 import com.manufacturingPlant.virtualPlant.model.WorkshopEmployee;
+import com.manufacturingPlant.virtualPlant.service.api.WorkshopEmployeeService;
 
 import java.util.List;
 
 /**
- * Created by VYA on 11.05.2017.
+ * Created by VYA on 13.05.2017.
  */
-public class WorkshopEmployeeDAOImpl implements WorkshopEmployeeDAO {
+public class WorkshopEmployeeServiceImpl implements WorkshopEmployeeService {
+
     public void addWorkshopEmployee(WorkshopEmployee workshopEmployee) {
 
     }
