@@ -11,14 +11,14 @@ public class WorkshopEmployee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "employee_id")//FK TO employees
+    @Column(name = "employee_id", columnDefinition = "char(13)")//FK TO employees
+    @OneToOne(fetch = FetchType.LAZY)
     private String employeeId;
 
     @Column(name = "salary")
     private int salary;
 
     @Column(name = "workshop_name",  columnDefinition = "char(13)") // FK TO workshops
-    @OneToOne(fetch = FetchType.LAZY)
     private String WorkshopName;
 
     public WorkshopEmployee() {
