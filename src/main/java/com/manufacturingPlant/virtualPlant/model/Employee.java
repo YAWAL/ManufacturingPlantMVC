@@ -12,7 +12,8 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "employee_id")//FK TO department_employees and workshop_employees
+    @Column(name = "employee_id", columnDefinition = "char(13)")//FK TO department_employees and workshop_employees
+    @OneToOne(fetch = FetchType.LAZY)
     private String employeeId;
 
     @Column(name = "position_")

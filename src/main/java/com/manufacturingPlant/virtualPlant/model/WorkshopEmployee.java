@@ -17,7 +17,8 @@ public class WorkshopEmployee {
     @Column(name = "salary")
     private int salary;
 
-    @Column(name = "workshop_name") // FK TO workshops
+    @Column(name = "workshop_name",  columnDefinition = "char(13)") // FK TO workshops
+    @OneToOne(fetch = FetchType.LAZY)
     private String WorkshopName;
 
     public WorkshopEmployee() {
