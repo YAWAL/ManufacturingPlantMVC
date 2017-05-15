@@ -2,23 +2,33 @@ package com.manufacturingPlant.virtualPlant.dao.impl;
 
 import com.manufacturingPlant.virtualPlant.dao.api.EmployeeDAO;
 import com.manufacturingPlant.virtualPlant.model.Employee;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by VYA on 11.05.2017.
- */
+@Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
+
+    @PersistenceContext(name = "ManufacturingPlant")
+    private EntityManager entityManager;
+
+    @Transactional
     public void addEmployee(Employee employee) {
-
+        entityManager.persist(employee);
     }
 
+    @Transactional
     public void updateEmployee(Employee employee) {
-
+        entityManager.merge(employee);
     }
 
+    @Transactional
     public List<Employee> showAllEmployees() {
-        return null;
+        return entityManager.createQuery("from employees").getResultList();
     }
 
     public List<Employee> showEmployeesByPosition(String position) {
@@ -26,6 +36,6 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     public void deleteEmployee(Employee employee) {
-
+        entityManager.remove(employee);
     }
 }
