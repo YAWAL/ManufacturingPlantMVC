@@ -31,10 +31,12 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return entityManager.createQuery("from employees").getResultList();
     }
 
+    @Transactional
     public List<Employee> showEmployeesByPosition(String position) {
         return null;
     }
 
+    @Transactional
     public void deleteEmployee(Employee employee) {
         entityManager.remove(employee);
     }
