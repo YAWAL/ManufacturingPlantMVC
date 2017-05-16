@@ -1,7 +1,9 @@
 package com.manufacturingPlant.virtualPlant.service.impl;
 
+import com.manufacturingPlant.virtualPlant.dao.api.EmployeeDAO;
 import com.manufacturingPlant.virtualPlant.model.Employee;
 import com.manufacturingPlant.virtualPlant.service.api.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -9,6 +11,9 @@ import java.util.List;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
+
+    @Autowired
+    private EmployeeDAO employeeDAO;
 
     @Transactional
     public void addEmployee(Employee employee) {
