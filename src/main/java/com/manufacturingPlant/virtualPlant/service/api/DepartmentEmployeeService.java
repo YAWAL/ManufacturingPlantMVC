@@ -4,18 +4,15 @@ import com.manufacturingPlant.virtualPlant.model.DepartmentEmployee;
 
 import java.util.List;
 
-/**
- * Created by VYA on 13.05.2017.
- */
 public interface DepartmentEmployeeService {
 
-    public void addDepartmentEmployee(DepartmentEmployee departmentEmployee);
+    public void addDepartmentEmployee(String employeeId, int salary, String departmentName);
 
-    public void updateDepartmentEmployee(DepartmentEmployee departmentEmployee);
+    public void updateDepartmentEmployee(String employeeId, int salary, String departmentName);
 
     public List<DepartmentEmployee> showAllDepartmentEmployees();
 
     public List<DepartmentEmployee> showDepartmentEmployeesByDepartment(String departmentName);
 
-    public void deleteDepartmentEmployee(DepartmentEmployee departmentEmployee);
+    public void deleteDepartmentEmployee(String employeeId);
 }
