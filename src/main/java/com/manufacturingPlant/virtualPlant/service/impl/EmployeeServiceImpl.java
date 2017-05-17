@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -16,12 +17,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeDAO employeeDAO;
 
     @Transactional
-    public void addEmployee(Employee employee) {
+    public void addEmployee(String employeeId, String position, String name, String lastName, String middleName, String passSeriesAndNum, String identificationNum, LocalDate birthDate, String phoneNum, LocalDate joinDate, String residencePlace, String street, String buildingNum, String flatNum) {
 
     }
 
     @Transactional
-    public void updateEmployee(Employee employee) {
+    public void updateEmployee(String employeeId, String position, String name, String lastName, String middleName, String passSeriesAndNum, String identificationNum, LocalDate birthDate, String phoneNum, LocalDate joinDate, String residencePlace, String street, String buildingNum, String flatNum) {
 
     }
 
@@ -36,7 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Transactional
-    public void deleteEmployee(Employee employee) {
+    public void deleteEmployee(String employeeId) {
 
     }
 }

@@ -16,12 +16,12 @@ public class DepartmentEmployeeServiceImpl implements DepartmentEmployeeService 
     private DepartmentEmployeeDAO departmentEmployeeDAO;
 
     @Transactional
-    public void addDepartmentEmployee(DepartmentEmployee departmentEmployee) {
+    public void addDepartmentEmployee(String employeeId, int salary, String departmentName) {
 
     }
 
     @Transactional
-    public void updateDepartmentEmployee(DepartmentEmployee departmentEmployee) {
+    public void updateDepartmentEmployee(String employeeId, int salary, String departmentName) {
 
     }
 
@@ -36,7 +36,8 @@ public class DepartmentEmployeeServiceImpl implements DepartmentEmployeeService 
     }
 
     @Transactional
-    public void deleteDepartmentEmployee(DepartmentEmployee departmentEmployee) {
+    public void deleteDepartmentEmployee(String employeeId) {
 
     }
+
 }

@@ -16,12 +16,12 @@ public class WorkshopEmployeeServiceImpl implements WorkshopEmployeeService {
     private WorkshopEmployeeDAO workshopEmployeeDAO;
 
     @Transactional
-    public void addWorkshopEmployee(WorkshopEmployee workshopEmployee) {
+    public void addWorkshopEmployee(String employeeId, int salary, String workshopName) {
 
     }
 
     @Transactional
-    public void updateWorkshopEmployee(WorkshopEmployee workshopEmployee) {
+    public void updateWorkshopEmployee(String employeeId, int salary, String workshopName) {
 
     }
 
@@ -36,7 +36,7 @@ public class WorkshopEmployeeServiceImpl implements WorkshopEmployeeService {
     }
 
     @Transactional
-    public void deleteWorkshopEmployee(WorkshopEmployee workshopEmployee) {
+    public void deleteWorkshopEmployee(String employeeId) {
 
     }
 }
