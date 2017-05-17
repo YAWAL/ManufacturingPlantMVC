@@ -4,9 +4,6 @@ import com.manufacturingPlant.virtualPlant.model.WorkshopEmployee;
 
 import java.util.List;
 
-/**
- * Created by VYA on 13.05.2017.
- */
 public interface WorkshopEmployeeService {
 
     public void addWorkshopEmployee(String employeeId, int salary, String workshopName);
