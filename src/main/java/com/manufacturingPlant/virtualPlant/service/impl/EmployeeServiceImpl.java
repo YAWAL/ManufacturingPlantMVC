@@ -17,23 +17,29 @@ public class EmployeeServiceImpl implements EmployeeService {
     private EmployeeDAO employeeDAO;
 
     @Transactional
-    public void addEmployee(String employeeId, String position, String name, String lastName, String middleName, String passSeriesAndNum, String identificationNum, LocalDate birthDate, String phoneNum, LocalDate joinDate, String residencePlace, String street, String buildingNum, String flatNum) {
-
+    public void addEmployee(String employeeId, String position, String name, String lastName, String middleName,
+                            String passSeriesAndNum, String identificationNum, LocalDate birthDate, String phoneNum,
+                            LocalDate joinDate, String residencePlace, String street, String buildingNum, String flatNum) {
+        employeeDAO.addEmployee(new Employee(employeeId, position, name, lastName, middleName, passSeriesAndNum,
+                identificationNum, birthDate, phoneNum, joinDate, residencePlace, street, buildingNum, flatNum));
     }
 
     @Transactional
-    public void updateEmployee(String employeeId, String position, String name, String lastName, String middleName, String passSeriesAndNum, String identificationNum, LocalDate birthDate, String phoneNum, LocalDate joinDate, String residencePlace, String street, String buildingNum, String flatNum) {
-
+    public void updateEmployee(String employeeId, String position, String name, String lastName, String middleName,
+                               String passSeriesAndNum, String identificationNum, LocalDate birthDate, String phoneNum,
+                               LocalDate joinDate, String residencePlace, String street, String buildingNum, String flatNum) {
+        employeeDAO.updateEmployee(new Employee(employeeId, position, name, lastName, middleName, passSeriesAndNum,
+                identificationNum, birthDate, phoneNum, joinDate, residencePlace, street, buildingNum, flatNum));
     }
 
     @Transactional
     public List<Employee> showAllEmployees() {
-        return null;
+        return employeeDAO.showAllEmployees();
     }
 
     @Transactional
     public List<Employee> showEmployeesByPosition(String position) {
-        return null;
+        return employeeDAO.showEmployeesByPosition(position);
     }
 
     @Transactional

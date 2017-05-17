@@ -17,22 +17,22 @@ public class WorkshopEmployeeServiceImpl implements WorkshopEmployeeService {
 
     @Transactional
     public void addWorkshopEmployee(String employeeId, int salary, String workshopName) {
-
+        workshopEmployeeDAO.addWorkshopEmployee(new WorkshopEmployee(employeeId, salary, workshopName));
     }
 
     @Transactional
     public void updateWorkshopEmployee(String employeeId, int salary, String workshopName) {
-
+        workshopEmployeeDAO.updateWorkshopEmployee(new WorkshopEmployee(employeeId, salary, workshopName));
     }
 
     @Transactional
     public List<WorkshopEmployee> showAllWorkshopEmployees() {
-        return null;
+        return workshopEmployeeDAO.showAllWorkshopEmployees();
     }
 
     @Transactional
     public List<WorkshopEmployee> showWorkshopEmployeesByWorkshop(String workshopName) {
-        return null;
+        return workshopEmployeeDAO.showWorkshopEmployeesByWorkshop(workshopName);
     }
 
     @Transactional
