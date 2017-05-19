@@ -67,7 +67,7 @@
             <version>1.2</version>
         </dependency>
 
-        <!-- Hibernate -->
+        <!-- Hibernate , Persistence-->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -78,6 +78,17 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
 
         <!-- Logging -->
         <dependency>
@@ -122,7 +133,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Servlet -->
+        <!-- Servlet , tiles , JSP-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -138,17 +149,8 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
-            <version>${javax.servlet.version}</version>
+            <version>1.2</version>
         </dependency>
-
-        <!-- test -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.apache.tiles</groupId>
             <artifactId>tiles-template</artifactId>
@@ -169,6 +171,16 @@
             <artifactId>tiles-servlet</artifactId>
             <version>3.0.5</version>
         </dependency>
+
+        <!-- test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+
 
     </dependencies>
 
