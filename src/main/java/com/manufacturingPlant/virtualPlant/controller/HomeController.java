@@ -11,7 +11,6 @@ public class HomeController {
         return "home";
     }
 
-//    @RequestMapping(name = "/views/employees/employees.jsp")
     @RequestMapping(value = "/views/employees/employees.jsp")
     public String employees(){
         return "employees";
