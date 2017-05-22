@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/views/home.jsp")
     public String home(){
         return "home";
     }
@@ -23,7 +23,7 @@ public class HomeController {
 
     @RequestMapping(value = "/views/employees/departmentEmployees.jsp")
     public String departmentEmployees(){
-        return "departmenEmployees";
+        return "departmentEmployees";
     }
 
 }
