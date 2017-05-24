@@ -1,10 +1,11 @@
 package com.manufacturingPlant.virtualPlant.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.ArrayList;
 
-/**
- * Created by VYA on 22.05.2017.
- */
+@Entity
+@Table(name = "departments")
 public class Department {
 
     private int id;

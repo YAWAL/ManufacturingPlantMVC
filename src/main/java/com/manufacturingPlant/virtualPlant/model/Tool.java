@@ -1,7 +1,9 @@
 package com.manufacturingPlant.virtualPlant.model;
 
-/**
- * Created by VYA on 23.05.2017.
- */
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tools")
 public class Tool {
 }
