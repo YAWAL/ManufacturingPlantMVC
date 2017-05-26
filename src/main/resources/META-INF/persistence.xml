@@ -8,6 +8,8 @@
             <class>com.manufacturingPlant.virtualPlant.model.Workshop</class>
             <class>com.manufacturingPlant.virtualPlant.model.Department</class>
             <class>com.manufacturingPlant.virtualPlant.model.Agent</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Tool</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Material</class>
 
 
 
