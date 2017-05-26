@@ -5,6 +5,14 @@
             <class>com.manufacturingPlant.virtualPlant.model.Employee</class>
             <class>com.manufacturingPlant.virtualPlant.model.DepartmentEmployee</class>
             <class>com.manufacturingPlant.virtualPlant.model.WorkshopEmployee</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Workshop</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Department</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Agent</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Tool</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Material</class>
+
+
+
 
         <properties>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />

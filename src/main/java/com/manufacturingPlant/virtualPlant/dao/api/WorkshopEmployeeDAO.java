@@ -4,9 +4,6 @@ import com.manufacturingPlant.virtualPlant.model.WorkshopEmployee;
 
 import java.util.List;
 
-/**
- * Created by VYA on 11.05.2017.
- */
 public interface WorkshopEmployeeDAO {
 
     public void addWorkshopEmployee(WorkshopEmployee workshopEmployee);
