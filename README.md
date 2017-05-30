@@ -1,4 +1,4 @@
-# ManufacturingPlantMVC
+# Employee Data Structure testing
 ManufacturingPlantMVC project
 On this branch <strong class="branch-name">TEST_EmployeeStructure</strong> Employee Data Structure is testing.
 3 Classes : Employee, WorkshopEmployee, DepartmentEmployee.
