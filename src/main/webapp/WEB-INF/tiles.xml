@@ -24,7 +24,7 @@
         <put-attribute name="title" value="workshopEmployees"></put-attribute>
     </definition>
 
-    <definition name="departmenEmployees" extends="base.definition">
+    <definition name="departmentEmployees" extends="base.definition">
         <put-attribute name="body" value="/views/employees/departmentEmployees.jsp"></put-attribute>
         <put-attribute name="title" value="departmenEmployees"></put-attribute>
     </definition>
