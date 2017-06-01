@@ -24,7 +24,7 @@ public class NonProductionEquipment {
     @Column(name = "department_name")
     private String departmentName;
 
-    @Column(name = "start_name")
+    @Column(name = "start_date")
     private LocalDate startDate;
 
     @Column(name = "weight")
