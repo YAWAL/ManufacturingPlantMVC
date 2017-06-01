@@ -21,7 +21,7 @@ public class ProductionEquipment {
     @Column(name = "workshop_name")
     private String workshopName;
 
-    @Column(name = "start_name")
+    @Column(name = "start_date")
     private LocalDate startDate;
 
     @Column(name = "power")
