@@ -17,7 +17,7 @@ public class ProductionEquipment {
 
     @Column(name = "workshop_name")
     private String workshopName;
-
+  
     @Column(name = "power")
     private String power;
 

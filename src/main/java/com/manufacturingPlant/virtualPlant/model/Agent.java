@@ -17,8 +17,8 @@ public class Agent {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "phone")
-    private String phone;
+    @Column(name = "phone_num")
+    private String phoneNum;
 
     @Column(name = "web_site")
     private String webSite;
@@ -29,10 +29,10 @@ public class Agent {
     public Agent() {
     }
 
-    public Agent(String agentName, String address, String phone, String webSite, String email) {
+    public Agent(String agentName, String address, String phoneNum, String webSite, String email) {
         this.agentName = agentName;
         this.address = address;
-        this.phone = phone;
+        this.phoneNum = phoneNum;
         this.webSite = webSite;
         this.email = email;
     }
@@ -57,12 +57,12 @@ public class Agent {
         this.address = adress;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     public String getWebSite() {
@@ -91,7 +91,7 @@ public class Agent {
         if (id != agent.id) return false;
         if (!agentName.equals(agent.agentName)) return false;
         if (!address.equals(agent.address)) return false;
-        if (!phone.equals(agent.phone)) return false;
+        if (!phoneNum.equals(agent.phoneNum)) return false;
         if (!webSite.equals(agent.webSite)) return false;
         return email.equals(agent.email);
     }
@@ -101,7 +101,7 @@ public class Agent {
         int result = id;
         result = 31 * result + agentName.hashCode();
         result = 31 * result + address.hashCode();
-        result = 31 * result + phone.hashCode();
+        result = 31 * result + phoneNum.hashCode();
         result = 31 * result + webSite.hashCode();
         result = 31 * result + email.hashCode();
         return result;
