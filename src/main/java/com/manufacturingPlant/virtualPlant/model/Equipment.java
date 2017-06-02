@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "tools")
-public class Tool {
+@Table(name = "equipments")
+public class Equipment {
 
     @Id
     @Column(name = "id")
@@ -18,17 +18,17 @@ public class Tool {
     @Column(name = "name_")
     private String name;
 
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "workshop_name")
-    private String workshopName; // FR to workshops
-
-    @Column(name = "start_date")
+    @Column(name = "start_name")
     private LocalDate startDate;
 
+    @Column(name = "weight")
+    private String weight;
+
+    @Column(name = "sizes")
+    private String sizes;
+
     @Column(name = "production_year")
-    private String productionYear; // or LocalDate
+    private LocalDate productionYear;
 
     @Column(name = "manufacturer_name")
     private String manufacturerName;
@@ -39,16 +39,16 @@ public class Tool {
     @Column(name = "price")
     private int price;
 
-    public Tool() {
+    public Equipment() {
     }
 
-    public Tool(String inventoryNum, String name, String description, String workshopName, LocalDate startDate,
-                String productionYear, String manufacturerName, String vendorName, int price) {
+    public Equipment(String inventoryNum, String name, LocalDate startDate, String weight, String sizes,
+                     LocalDate productionYear, String manufacturerName, String vendorName, int price) {
         this.inventoryNum = inventoryNum;
         this.name = name;
-        this.description = description;
-        this.workshopName = workshopName;
         this.startDate = startDate;
+        this.weight = weight;
+        this.sizes = sizes;
         this.productionYear = productionYear;
         this.manufacturerName = manufacturerName;
         this.vendorName = vendorName;
@@ -75,22 +75,6 @@ public class Tool {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getWorkshopName() {
-        return workshopName;
-    }
-
-    public void setWorkshopName(String workshopName) {
-        this.workshopName = workshopName;
-    }
-
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -99,11 +83,27 @@ public class Tool {
         this.startDate = startDate;
     }
 
-    public String getProductionYear() {
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(String sizes) {
+        this.sizes = sizes;
+    }
+
+    public LocalDate getProductionYear() {
         return productionYear;
     }
 
-    public void setProductionYear(String productionYear) {
+    public void setProductionYear(LocalDate productionYear) {
         this.productionYear = productionYear;
     }
 
@@ -136,18 +136,18 @@ public class Tool {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Tool tool = (Tool) o;
+        Equipment equipment = (Equipment) o;
 
-        if (id != tool.id) return false;
-        if (price != tool.price) return false;
-        if (!inventoryNum.equals(tool.inventoryNum)) return false;
-        if (!name.equals(tool.name)) return false;
-        if (!description.equals(tool.description)) return false;
-        if (!workshopName.equals(tool.workshopName)) return false;
-        if (!startDate.equals(tool.startDate)) return false;
-        if (!productionYear.equals(tool.productionYear)) return false;
-        if (!manufacturerName.equals(tool.manufacturerName)) return false;
-        return vendorName.equals(tool.vendorName);
+        if (id != equipment.id) return false;
+        if (price != equipment.price) return false;
+        if (!inventoryNum.equals(equipment.inventoryNum)) return false;
+        if (!name.equals(equipment.name)) return false;
+        if (!startDate.equals(equipment.startDate)) return false;
+        if (!weight.equals(equipment.weight)) return false;
+        if (!sizes.equals(equipment.sizes)) return false;
+        if (!productionYear.equals(equipment.productionYear)) return false;
+        if (!manufacturerName.equals(equipment.manufacturerName)) return false;
+        return vendorName.equals(equipment.vendorName);
     }
 
     @Override
@@ -155,9 +155,9 @@ public class Tool {
         int result = id;
         result = 31 * result + inventoryNum.hashCode();
         result = 31 * result + name.hashCode();
-        result = 31 * result + description.hashCode();
-        result = 31 * result + workshopName.hashCode();
         result = 31 * result + startDate.hashCode();
+        result = 31 * result + weight.hashCode();
+        result = 31 * result + sizes.hashCode();
         result = 31 * result + productionYear.hashCode();
         result = 31 * result + manufacturerName.hashCode();
         result = 31 * result + vendorName.hashCode();
