@@ -10,6 +10,11 @@
             <class>com.manufacturingPlant.virtualPlant.model.Agent</class>
             <class>com.manufacturingPlant.virtualPlant.model.Tool</class>
             <class>com.manufacturingPlant.virtualPlant.model.Material</class>
+            <class>com.manufacturingPlant.virtualPlant.model.Equipment</class>
+            <class>com.manufacturingPlant.virtualPlant.model.ProductionEquipment</class>
+            <class>com.manufacturingPlant.virtualPlant.model.NonProductionEquipment</class>
+
+
 
 
 
@@ -20,6 +25,7 @@
             <property name="hibernate.connection.username" value="root" />
             <property name="hibernate.connection.password" value="root" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+            <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update" />
         </properties>
 
