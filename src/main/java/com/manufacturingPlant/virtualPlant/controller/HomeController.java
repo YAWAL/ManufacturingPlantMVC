@@ -2,29 +2,30 @@ package com.manufacturingPlant.virtualPlant.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
 
 
 
-    @RequestMapping(value = "/views/home.jsp")
-    public String home(){
+    @RequestMapping("/views/home.jsp")
+    public @ResponseBody String home(){
         return "home";
     }
 
-    @RequestMapping(value = "/views/employees/employees.jsp")
-    public String employees(){
+    @RequestMapping("/views/employees/employees.jsp")
+    public @ResponseBody String employees(){
         return "employees";
     }
 
-    @RequestMapping(value = "/views/employees/workshopEmployees.jsp")
-    public String workshopEmployees(){
+    @RequestMapping("/views/employees/workshopEmployees.jsp")
+    public @ResponseBody String workshopEmployees(){
         return "workshopEmployees";
     }
 
-    @RequestMapping(value = "/views/employees/departmentEmployees.jsp")
-    public String departmentEmployees(){
+    @RequestMapping("/views/employees/departmentEmployees.jsp")
+    public @ResponseBody String departmentEmployees(){
         return "departmentEmployees";
     }
 
