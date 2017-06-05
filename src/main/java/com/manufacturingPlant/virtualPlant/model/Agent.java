@@ -3,7 +3,6 @@ package com.manufacturingPlant.virtualPlant.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "agents")
 public class Agent {
 
     @Id
