@@ -2,6 +2,7 @@ package com.manufacturingPlant.virtualPlant.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "workshops")
@@ -22,22 +23,22 @@ public class Workshop {
     private String chairmanEmployeeId; // FK to workshop_employees 'one-to-one'
 
     @Column(name = "workshop_employees")
-    private ArrayList<WorkshopEmployee> workshopEmployees;//FK to workshop_employees 'many-to-one'
+    private List<WorkshopEmployee> workshopEmployees;//FK to workshop_employees 'many-to-one'
 
     @Column(name = "workshop_employee_quantity")
     private int workshopEmployeeQuantity;// do not include to constructor
 
     @Column(name = "production_equipments")
-    private ArrayList<ProductionEquipment> productionEquipment;
+    private List<ProductionEquipment> productionEquipment;
 
     @Column(name = "nonproduction_equipments")
-    private ArrayList<NonProductionEquipment> nonProductionEquipment;
+    private List<NonProductionEquipment> nonProductionEquipment;
 
     @Column(name = "tools")
-    private ArrayList<Tool> tools;
+    private List<Tool> tools;
 
     @Column(name = "materials")
-    private ArrayList<Material> materials;
+    private List<Material> materials;
 
 
     public Workshop() {
@@ -87,11 +88,11 @@ public class Workshop {
         this.chairmanEmployeeId = chairmanEmployeeId;
     }
 
-    public ArrayList<WorkshopEmployee> getWorkshopEmployees() {
+    public List<WorkshopEmployee> getWorkshopEmployees() {
         return workshopEmployees;
     }
 
-    public void setWorkshopEmployees(ArrayList<WorkshopEmployee> workshopEmployees) {
+    public void setWorkshopEmployees(List<WorkshopEmployee> workshopEmployees) {
         this.workshopEmployees = workshopEmployees;
     }
 
@@ -103,35 +104,35 @@ public class Workshop {
         this.workshopEmployeeQuantity = workshopEmployeeQuantity;
     }
 
-    public ArrayList<ProductionEquipment> getProductionEquipment() {
+    public List<ProductionEquipment> getProductionEquipment() {
         return productionEquipment;
     }
 
-    public void setProductionEquipment(ArrayList<ProductionEquipment> productionEquipment) {
+    public void setProductionEquipment(List<ProductionEquipment> productionEquipment) {
         this.productionEquipment = productionEquipment;
     }
 
-    public ArrayList<NonProductionEquipment> getNonProductionEquipment() {
+    public List<NonProductionEquipment> getNonProductionEquipment() {
         return nonProductionEquipment;
     }
 
-    public void setNonProductionEquipment(ArrayList<NonProductionEquipment> nonProductionEquipment) {
+    public void setNonProductionEquipment(List<NonProductionEquipment> nonProductionEquipment) {
         this.nonProductionEquipment = nonProductionEquipment;
     }
 
-    public ArrayList<Tool> getTools() {
+    public List<Tool> getTools() {
         return tools;
     }
 
-    public void setTools(ArrayList<Tool> tools) {
+    public void setTools(List<Tool> tools) {
         this.tools = tools;
     }
 
-    public ArrayList<Material> getMaterials() {
+    public List<Material> getMaterials() {
         return materials;
     }
 
-    public void setMaterials(ArrayList<Material> materials) {
+    public void setMaterials(List<Material> materials) {
         this.materials = materials;
     }
 
