@@ -39,35 +39,33 @@
         <property name="showSql" value="true"/>
         <property name="database" value="MYSQL"/>
     </bean>
-    
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"></property>
+
+    <bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource">
+        <constructor-arg ref="hikariConfig"/>
+    </bean>
+    <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+        <property name="jdbcUrl" value="jdbc:mysql://localhost/manufacturing_plant"/>
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
     </bean>
 
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"/>
 
-
-    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-        <property name="viewClass">
-            <value>org.springframework.web.servlet.view.tiles3.TilesView</value>
-        </property>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/views/"/>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="tilesConfigurer"
-          class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-        <property name="definitions">
-            <list>
-                <value>/WEB-INF/tiles.xml</value>
-            </list>
-        </property>
-    </bean>
+    <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 
-    <!-- Spring’s multipart (file upload) support -->
-    <bean id="multipartResolver"
-          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-        <!-- one of the properties available; the maximum file size in bytes -->
-        <property name="maxUploadSize" value="2000000"></property>
-    </bean>
-    <bean id="dataSource" class="javax.sql.DataSource"/>
+    <security:global-method-security secured-annotations="enabled"/>
+
+    <!--<security:authentication-manager>-->
+        <!--<security:authentication-provider user-service-ref="userDetailsServiceImpl">-->
+            <!--<security:password-encoder ref="encoder"/>-->
+        <!--</security:authentication-provider>-->
+    <!--</security:authentication-manager>-->
 
 </beans>
