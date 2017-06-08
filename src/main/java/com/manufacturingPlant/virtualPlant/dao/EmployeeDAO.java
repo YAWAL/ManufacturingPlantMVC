@@ -1,4 +1,4 @@
-package com.manufacturingPlant.virtualPlant.dao.api;
+package com.manufacturingPlant.virtualPlant.dao;
 
 import com.manufacturingPlant.virtualPlant.model.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;

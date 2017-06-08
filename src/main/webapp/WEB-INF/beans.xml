@@ -20,7 +20,7 @@
         http://www.springframework.org/schema/security/spring-security.xsd">
 
     <context:component-scan base-package="com.manufacturingPlant.virtualPlant.*"/>
-    <jpa:repositories base-package="com.manufacturingPlant.virtualPlant.dao.api"/>
+    <jpa:repositories base-package="com.manufacturingPlant.virtualPlant.dao"/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <mvc:resources mapping="/resources/**" location="resources"/>
     <mvc:annotation-driven/>
@@ -29,7 +29,7 @@
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="jpaVendorAdapter" ref="vendorAdapter"/>
         <property name="dataSource" ref="dataSource"/>
-        <property name="persistenceUnitName" value="ManufacturingPlant"></property>
+        <property name="persistenceUnitName" value="ManufacturingPlant"/>
         <property name="packagesToScan" value="com.manufacturingPlant.virtualPlant.model.*"/>
     </bean>
 
@@ -58,9 +58,9 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+    <!--<bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>-->
 
-    <security:global-method-security secured-annotations="enabled"/>
+    <!--<security:global-method-security secured-annotations="enabled"/>-->
 
     <!--<security:authentication-manager>-->
         <!--<security:authentication-provider user-service-ref="userDetailsServiceImpl">-->

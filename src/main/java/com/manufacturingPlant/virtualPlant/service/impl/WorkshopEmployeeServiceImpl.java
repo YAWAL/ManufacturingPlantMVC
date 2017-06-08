@@ -1,6 +1,6 @@
 package com.manufacturingPlant.virtualPlant.service.impl;
 
-import com.manufacturingPlant.virtualPlant.dao.api.WorkshopEmployeeDAO;
+import com.manufacturingPlant.virtualPlant.dao.WorkshopEmployeeDAO;
 import com.manufacturingPlant.virtualPlant.model.WorkshopEmployee;
 import com.manufacturingPlant.virtualPlant.service.api.WorkshopEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,28 +15,53 @@ public class WorkshopEmployeeServiceImpl implements WorkshopEmployeeService {
     @Autowired
     private WorkshopEmployeeDAO workshopEmployeeDAO;
 
-    @Transactional
+    @Override
     public void addWorkshopEmployee(String employeeId, int salary, String workshopName) {
-        workshopEmployeeDAO.addWorkshopEmployee(new WorkshopEmployee(employeeId, salary, workshopName));
+
     }
 
-    @Transactional
+    @Override
     public void updateWorkshopEmployee(String employeeId, int salary, String workshopName) {
-        workshopEmployeeDAO.updateWorkshopEmployee(new WorkshopEmployee(employeeId, salary, workshopName));
+
     }
 
-    @Transactional
+    @Override
     public List<WorkshopEmployee> showAllWorkshopEmployees() {
-        return workshopEmployeeDAO.showAllWorkshopEmployees();
+        return null;
     }
 
-    @Transactional
+    @Override
     public List<WorkshopEmployee> showWorkshopEmployeesByWorkshop(String workshopName) {
-        return workshopEmployeeDAO.showWorkshopEmployeesByWorkshop(workshopName);
+        return null;
     }
 
-    @Transactional
+    @Override
     public void deleteWorkshopEmployee(String employeeId) {
 
     }
+
+//    @Transactional
+//    public void addWorkshopEmployee(String employeeId, int salary, String workshopName) {
+//        workshopEmployeeDAO.addWorkshopEmployee(new WorkshopEmployee(employeeId, salary, workshopName));
+//    }
+//
+//    @Transactional
+//    public void updateWorkshopEmployee(String employeeId, int salary, String workshopName) {
+//        workshopEmployeeDAO.updateWorkshopEmployee(new WorkshopEmployee(employeeId, salary, workshopName));
+//    }
+//
+//    @Transactional
+//    public List<WorkshopEmployee> showAllWorkshopEmployees() {
+//        return workshopEmployeeDAO.showAllWorkshopEmployees();
+//    }
+//
+//    @Transactional
+//    public List<WorkshopEmployee> showWorkshopEmployeesByWorkshop(String workshopName) {
+//        return workshopEmployeeDAO.showWorkshopEmployeesByWorkshop(workshopName);
+//    }
+//
+//    @Transactional
+//    public void deleteWorkshopEmployee(String employeeId) {
+//
+//    }
 }
