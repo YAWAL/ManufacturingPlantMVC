@@ -3,6 +3,8 @@ package com.manufacturingPlant.virtualPlant.controller;
 import com.manufacturingPlant.virtualPlant.service.api.DepartmentEmployeeService;
 import com.manufacturingPlant.virtualPlant.service.api.EmployeeService;
 import com.manufacturingPlant.virtualPlant.service.api.WorkshopEmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +15,8 @@ import java.security.Principal;
 
 @Controller
 public class HomeController {
+
+    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
     private final DepartmentEmployeeService departmentEmployeeService;
     private final EmployeeService employeeService;
