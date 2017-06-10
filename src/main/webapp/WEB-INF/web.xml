@@ -54,8 +54,8 @@
     <error-page>
         <location>/views/404.jsp</location>
     </error-page>
-    <!--<welcome-file-list>-->
-        <!--<welcome-file>home.jsp</welcome-file>-->
-    <!--</welcome-file-list>-->
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
 
 </web-app>
